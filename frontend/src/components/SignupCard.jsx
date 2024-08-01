@@ -61,8 +61,8 @@ export default function SignupCard() {
 		<Flex align={"center"} justify={"center"}>
 			<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
 				<Stack align={"center"}>
-					<Heading fontSize={"4xl"} textAlign={"center"}>
-						Sign up
+					<Heading fontSize={"2xl"} textAlign={"center"}>
+						Join Our Community
 					</Heading>
 				</Stack>
 				<Box rounded={"lg"} bg={useColorModeValue("white", "gray.dark")} boxShadow={"lg"} p={8}>
@@ -70,7 +70,7 @@ export default function SignupCard() {
 						<HStack>
 							<Box>
 								<FormControl isRequired>
-									<FormLabel>Full name</FormLabel>
+									<FormLabel>Humans Name</FormLabel>
 									<Input
 										type='text'
 										onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
@@ -80,7 +80,7 @@ export default function SignupCard() {
 							</Box>
 							<Box>
 								<FormControl isRequired>
-									<FormLabel>Username</FormLabel>
+									<FormLabel>Pets Name</FormLabel>
 									<Input
 										type='text'
 										onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
