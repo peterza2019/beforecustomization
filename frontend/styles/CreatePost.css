@@ -1,0 +1,18 @@
+.create-post {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  input, textarea, button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  button {
+    background: var(--accent-color);
+    cursor: pointer;
+  }

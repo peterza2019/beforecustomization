@@ -12,7 +12,7 @@ import userAtom from "../atoms/userAtom";
 import postsAtom from "../atoms/postsAtom";
 
 const Post = ({ post, postedBy }) => {
-    const [user, setUser] = useState(null);
+	const [user, setUser] = useState(null);
 	const showToast = useShowToast();
 	const currentUser = useRecoilValue(userAtom);
 	const [posts, setPosts] = useRecoilState(postsAtom);
@@ -57,35 +57,23 @@ const Post = ({ post, postedBy }) => {
 		}
 	};
 
-  if (!user) return null;
-  return (
-    <Box 
-      className="glass-effect" 
-      borderRadius="md" 
-      p={4} 
-      mb={4}
-      transition="all 0.3s"
-      _hover={{
-        transform: "translateY(-5px)",
-        boxShadow: "xl"
-      }}
-    >
-      <Link to={`/${user.username}/post/${post._id}`}>
-        <Flex gap={3}>
-          <Flex flexDirection={"column"} alignItems={"center"}>
-            <Avatar
-              size='md'
-              name={user.name}
-              src={user?.profilePic}
-              onClick={(e) => {
-                e.preventDefault();
-                navigate(`/${user.username}`);
-              }}
-            />
-            <Box w='1px' h={"full"} bg='gray.600' my={2}></Box>
-            <Box position={"relative"} w={"full"}>
-
-              {post.replies.length === 0 && <Text textAlign={"center"}>🥱</Text>}
+	if (!user) return null;
+	return (
+		<Link to={`/${user.username}/post/${post._id}`}>
+			<Flex gap={3} mb={4} py={5}>
+				<Flex flexDirection={"column"} alignItems={"center"}>
+					<Avatar
+						size='md'
+						name={user.name}
+						src={user?.profilePic}
+						onClick={(e) => {
+							e.preventDefault();
+							navigate(`/${user.username}`);
+						}}
+					/>
+					<Box w='1px' h={"full"} bg='gray.light' my={2}></Box>
+					<Box position={"relative"} w={"full"}>
+						{post.replies.length === 0 && <Text textAlign={"center"}>🥱</Text>}
 						{post.replies[0] && (
 							<Avatar
 								size='xs'
@@ -121,51 +109,46 @@ const Post = ({ post, postedBy }) => {
 								padding={"2px"}
 							/>
 						)}
+					</Box>
+				</Flex>
+				<Flex flex={1} flexDirection={"column"} gap={2}>
+					<Flex justifyContent={"space-between"} w={"full"}>
+						<Flex w={"full"} alignItems={"center"}>
+							<Text
+								fontSize={"sm"}
+								fontWeight={"bold"}
+								onClick={(e) => {
+									e.preventDefault();
+									navigate(`/${user.username}`);
+								}}
+							>
+								{user?.username}
+							</Text>
+							<Image src='/verified.png' w={4} h={4} ml={1} />
+						</Flex>
+						<Flex gap={4} alignItems={"center"}>
+							<Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.light"}>
+								{formatDistanceToNow(new Date(post.createdAt))} ago
+							</Text>
 
-            </Box>
+							{currentUser?._id === user._id && <DeleteIcon size={20} onClick={handleDeletePost} />}
+						</Flex>
+					</Flex>
 
+					<Text fontSize={"sm"}>{post.text}</Text>
+					{post.img && (
+						<Box borderRadius={6} overflow={"hidden"} border={"1px solid"} borderColor={"gray.light"}>
+							<Image src={post.img} w={"full"} />
+						</Box>
+					)}
 
-          </Flex>
-          <Flex flex={1} flexDirection={"column"} gap={2}>
-            <Flex justifyContent={"space-between"} w={"full"}>
-              <Flex w={"full"} alignItems={"center"}>
-                <Text
-                  fontSize={"sm"}
-                  fontWeight={"bold"}
-                  color="white"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate(`/${user.username}`);
-                  }}
-                >
-                  {user?.username}
-                </Text>
-                <Image src='/verified.png' w={4} h={4} ml={1} />
-              </Flex>
-              <Flex gap={4} alignItems={"center"}>
-                <Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.300"}>
-                  {formatDistanceToNow(new Date(post.createdAt))} ago
-                </Text>
-
-                {currentUser?._id === user._id && <DeleteIcon size={20} onClick={handleDeletePost} color="white" />}
-              </Flex>
-            </Flex>
-
-            <Text fontSize={"sm"} color="white">{post.text}</Text>
-            {post.img && (
-              <Box borderRadius={6} overflow={"hidden"}>
-                <Image src={post.img} w={"full"} />
-              </Box>
-            )}
-
-            <Flex gap={3} my={1}>
-              <Actions post={post} />
-            </Flex>
-          </Flex>
-        </Flex>
-      </Link>
-    </Box>
-  );
+					<Flex gap={3} my={1}>
+						<Actions post={post} />
+					</Flex>
+				</Flex>
+			</Flex>
+		</Link>
+	);
 };
 
 export default Post;

@@ -16,8 +16,9 @@ const Header = () => {
 	const logout = useLogout();
 	const setAuthScreen = useSetRecoilState(authScreenAtom);
 
+
 	return (
-		<Flex justifyContent={"space-between"} mt={6} mb='12'>
+		<Flex justifyContent={"space-between"} mt={6} mb='12' className="glass-effect" p={4}>
 			{user && (
 				<Link as={RouterLink} to='/'>
 					<AiFillHome size={24} />
