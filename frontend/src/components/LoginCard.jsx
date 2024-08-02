@@ -74,7 +74,7 @@ export default function LoginCard() {
 				>
 					<Stack spacing={4}>
 						<FormControl isRequired>
-							<FormLabel>Username</FormLabel>
+							<FormLabel>Your Pets Name</FormLabel>
 							<Input
 								type='text'
 								value={inputs.username}
@@ -82,7 +82,7 @@ export default function LoginCard() {
 							/>
 						</FormControl>
 						<FormControl isRequired>
-							<FormLabel>Password</FormLabel>
+							<FormLabel>Your Password</FormLabel>
 							<InputGroup>
 								<Input
 									type={showPassword ? "text" : "password"}
@@ -116,7 +116,7 @@ export default function LoginCard() {
 						</Stack>
 						<Stack pt={6}>
 							<Text align={"center"}>
-								Don&apos;t have an account?{" "}
+								Not a Member Yet ?{" "}
 								<Link color={"blue.400"} onClick={() => setAuthScreen("signup")}>
 									Sign up
 								</Link>

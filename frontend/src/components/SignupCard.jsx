@@ -4,6 +4,7 @@ import {
 	FormControl,
 	FormLabel,
 	Input,
+	Select,
 	InputGroup,
 	HStack,
 	InputRightElement,
@@ -62,15 +63,40 @@ export default function SignupCard() {
 			<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
 				<Stack align={"center"}>
 					<Heading fontSize={"2xl"} textAlign={"center"}>
-						Join Our Community
+						Join Petstagram
 					</Heading>
 				</Stack>
 				<Box rounded={"lg"} bg={useColorModeValue("white", "gray.dark")} boxShadow={"lg"} p={8}>
 					<Stack spacing={4}>
 						<HStack>
 							<Box>
+							<Box>
 								<FormControl isRequired>
-									<FormLabel>Humans Name</FormLabel>
+									<FormLabel>Your Pets Name</FormLabel>
+									<Input
+										type='text'
+										onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
+										value={inputs.username}
+									/>
+								</FormControl>
+								<Box>
+								<FormControl isRequired>
+  
+
+  <FormLabel>Cat .. Dog .. or .. Other ?</FormLabel>
+
+  <Select placeholder='Select'>
+    <option>Cat </option>
+    <option>Dog </option>
+    <option>Mmm .. other  ;)</option>
+  </Select>
+
+</FormControl>
+
+								</Box>
+							</Box>
+								<FormControl isRequired>
+									<FormLabel>Your Full Name</FormLabel>
 									<Input
 										type='text'
 										onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
@@ -79,18 +105,11 @@ export default function SignupCard() {
 								</FormControl>
 							</Box>
 							<Box>
-								<FormControl isRequired>
-									<FormLabel>Pets Name</FormLabel>
-									<Input
-										type='text'
-										onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
-										value={inputs.username}
-									/>
-								</FormControl>
+								
 							</Box>
 						</HStack>
 						<FormControl isRequired>
-							<FormLabel>Email address</FormLabel>
+							<FormLabel>Verified Email Address</FormLabel>
 							<Input
 								type='email'
 								onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
@@ -98,7 +117,7 @@ export default function SignupCard() {
 							/>
 						</FormControl>
 						<FormControl isRequired>
-							<FormLabel>Password</FormLabel>
+							<FormLabel>Secure Password</FormLabel>
 							<InputGroup>
 								<Input
 									type={showPassword ? "text" : "password"}
@@ -131,7 +150,7 @@ export default function SignupCard() {
 						</Stack>
 						<Stack pt={6}>
 							<Text align={"center"}>
-								Already a user?{" "}
+								Already a Member ?{" "}
 								<Link color={"blue.400"} onClick={() => setAuthScreen("login")}>
 									Login
 								</Link>
