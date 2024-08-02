@@ -60,15 +60,26 @@ export default function SignupCard() {
 
 	return (
 		<Flex align={"center"} justify={"center"}>
+			
+			
+			
 			<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+
+			
+
 				<Stack align={"center"}>
-					<Heading fontSize={"2xl"} textAlign={"center"}>
+
+				<Heading fontSize={"2xl"} textAlign={"center"}>
 						Join Petstagram
 					</Heading>
+
+					
+
 				</Stack>
+
 				<Box rounded={"lg"} bg={useColorModeValue("white", "gray.dark")} boxShadow={"lg"} p={8}>
-					<Stack spacing={4}>
-						<HStack>
+					<Stack spacing={5}>
+						<Stack>
 							<Box>
 							<Box>
 								<FormControl isRequired>
@@ -80,12 +91,28 @@ export default function SignupCard() {
 									/>
 								</FormControl>
 								<Box>
-								<FormControl isRequired>
+
+									
+								
+								</Box>
+							</Box>
+							
+								
+							</Box>
+
+							<Box>
+								
+							
+							</Box>
+
+						</Stack>
+
+						<FormControl isRequired>
   
 
   <FormLabel>Cat .. Dog .. or .. Other ?</FormLabel>
 
-  <Select placeholder='Select'>
+  <Select placeholder='Select From Below'>
     <option>Cat </option>
     <option>Dog </option>
     <option>Mmm .. other  ;)</option>
@@ -93,9 +120,8 @@ export default function SignupCard() {
 
 </FormControl>
 
-								</Box>
-							</Box>
-								<FormControl isRequired>
+
+						<FormControl isRequired>
 									<FormLabel>Your Full Name</FormLabel>
 									<Input
 										type='text'
@@ -103,11 +129,10 @@ export default function SignupCard() {
 										value={inputs.name}
 									/>
 								</FormControl>
-							</Box>
-							<Box>
 								
-							</Box>
-						</HStack>
+
+
+
 						<FormControl isRequired>
 							<FormLabel>Verified Email Address</FormLabel>
 							<Input

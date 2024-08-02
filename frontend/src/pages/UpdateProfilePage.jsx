@@ -61,6 +61,7 @@ export default function UpdateProfilePage() {
 	return (
 		<form onSubmit={handleSubmit}>
 			<Flex align={"center"} justify={"center"} my={6}>
+				
 				<Stack
 					spacing={4}
 					w={"full"}
@@ -71,23 +72,31 @@ export default function UpdateProfilePage() {
 					p={6}
 				>
 					<Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
-						User Profile Edit
+						Edit Profile
 					</Heading>
+
+
 					<FormControl id='userName'>
+						
 						<Stack direction={["column", "row"]} spacing={6}>
+
 							<Center>
 								<Avatar size='xl' boxShadow={"md"} src={imgUrl || user.profilePic} />
 							</Center>
+
 							<Center w='full'>
 								<Button w='full' onClick={() => fileRef.current.click()}>
-									Change Avatar
+									Change Profile Pic
 								</Button>
 								<Input type='file' hidden ref={fileRef} onChange={handleImageChange} />
 							</Center>
+
 						</Stack>
+
 					</FormControl>
+
 					<FormControl>
-						<FormLabel>Full name</FormLabel>
+						<FormLabel>Pets Name</FormLabel>
 						<Input
 							placeholder='John Doe'
 							value={inputs.name}
@@ -96,18 +105,23 @@ export default function UpdateProfilePage() {
 							type='text'
 						/>
 					</FormControl>
+
 					<FormControl>
-						<FormLabel>User name</FormLabel>
+
+						<FormLabel>Your Full Name</FormLabel>
 						<Input
-							placeholder='johndoe'
+							placeholder='Name & Surname'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
 							type='text'
 						/>
+
 					</FormControl>
+
 					<FormControl>
-						<FormLabel>Email address</FormLabel>
+						
+						<FormLabel>Verified Email Address</FormLabel>
 						<Input
 							placeholder='your-email@example.com'
 							value={inputs.email}
@@ -116,27 +130,31 @@ export default function UpdateProfilePage() {
 							type='email'
 						/>
 					</FormControl>
+
 					<FormControl>
-						<FormLabel>Bio</FormLabel>
+						<FormLabel>Pet Story</FormLabel>
 						<Input
-							placeholder='Your bio.'
+							placeholder='A short introduction about your pet'
 							value={inputs.bio}
 							onChange={(e) => setInputs({ ...inputs, bio: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
 							type='text'
 						/>
 					</FormControl>
+
 					<FormControl>
-						<FormLabel>Password</FormLabel>
+						<FormLabel>Your Password</FormLabel>
 						<Input
-							placeholder='password'
+							placeholder='Not less than 8 characters'
 							value={inputs.password}
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
 							type='password'
 						/>
 					</FormControl>
+
 					<Stack spacing={6} direction={["column", "row"]}>
+						
 						<Button
 							bg={"red.400"}
 							color={"white"}
@@ -147,6 +165,7 @@ export default function UpdateProfilePage() {
 						>
 							Cancel
 						</Button>
+
 						<Button
 							bg={"green.400"}
 							color={"white"}
@@ -160,8 +179,11 @@ export default function UpdateProfilePage() {
 							Submit
 						</Button>
 					</Stack>
+
 				</Stack>
+
 			</Flex>
+
 		</form>
 	);
 }

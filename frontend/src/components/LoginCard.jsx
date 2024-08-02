@@ -81,6 +81,7 @@ export default function LoginCard() {
 								onChange={(e) => setInputs((inputs) => ({ ...inputs, username: e.target.value }))}
 							/>
 						</FormControl>
+						
 						<FormControl isRequired>
 							<FormLabel>Your Password</FormLabel>
 							<InputGroup>
