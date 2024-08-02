@@ -85,7 +85,7 @@ export default function SignupCard() {
 					 bg={"rgba=(255, 255, 255, 0.8)"}
 					 backdropFilter={"blur(10px)"}
 					 borderRadius={"10px"}
-					 boxShadow={"0px 4px 8px rgba(0, 0, 0, 0.7)"}
+					 boxShadow={"0px 4px 8px rgba(0, 0, 1, 0.7)"}
 					 padding={"20px"}
 			   
 					 p={8}>
