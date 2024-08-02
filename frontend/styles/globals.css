@@ -1,6 +1,6 @@
 .app {
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #1a1b26, #2a2c3e);
+  min-height: 80vh;
+  background: linear-gradient(to bottom right, #ade0bb, #6c6f8e);
 }
 
 .blur-overlay {
@@ -10,8 +10,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at top left, rgba(61, 89, 161, 0.5), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(255, 0, 128, 0.5), transparent 50%);
+    radial-gradient(circle at top left, rgba(23, 204, 228, 0.5), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(238, 92, 165, 0.5), transparent 50%);
   filter: blur(100px);
   z-index: 0;
 }

@@ -6,7 +6,6 @@ import {
 	Input,
 	Select,
 	InputGroup,
-	HStack,
 	InputRightElement,
 	Stack,
 	Button,
@@ -77,11 +76,26 @@ export default function SignupCard() {
 
 				</Stack>
 
-				<Box rounded={"lg"} bg={useColorModeValue("white", "gray.dark")} boxShadow={"lg"} p={8}>
-					<Stack spacing={5}>
-						<Stack>
-							<Box>
-							<Box>
+				
+
+				<Box rounded={"lg"} 
+				     bg={useColorModeValue("white", "gray.dark")} 
+					 boxShadow={"lg"} 
+
+					 bg={"rgba=(255, 255, 255, 0.8)"}
+					 backdropFilter={"blur(10px)"}
+					 borderRadius={"10px"}
+					 boxShadow={"0px 4px 8px rgba(0, 0, 0, 0.7)"}
+					 padding={"20px"}
+			   
+					 p={8}>
+
+                   
+
+					<Stack spacing={5}> <Stack>
+							<Box> 
+
+
 								<FormControl isRequired>
 									<FormLabel>Your Pets Name</FormLabel>
 									<Input
@@ -90,20 +104,11 @@ export default function SignupCard() {
 										value={inputs.username}
 									/>
 								</FormControl>
-								<Box>
-
-									
 								
-								</Box>
 							</Box>
+												
 							
-								
-							</Box>
 
-							<Box>
-								
-							
-							</Box>
 
 						</Stack>
 
@@ -112,10 +117,10 @@ export default function SignupCard() {
 
   <FormLabel>Cat .. Dog .. or .. Other ?</FormLabel>
 
-  <Select placeholder='Select From Below'>
+  <Select placeholder='    '>
     <option>Cat </option>
     <option>Dog </option>
-    <option>Mmm .. other  ;)</option>
+    <option>Other  ;)</option>
   </Select>
 
 </FormControl>
@@ -158,6 +163,8 @@ export default function SignupCard() {
 									</Button>
 								</InputRightElement>
 							</InputGroup>
+
+
 						</FormControl>
 						<Stack spacing={10} pt={2}>
 							<Button
@@ -173,6 +180,7 @@ export default function SignupCard() {
 								Sign up
 							</Button>
 						</Stack>
+
 						<Stack pt={6}>
 							<Text align={"center"}>
 								Already a Member ?{" "}
@@ -181,6 +189,7 @@ export default function SignupCard() {
 								</Link>
 							</Text>
 						</Stack>
+
 					</Stack>
 				</Box>
 			</Stack>
