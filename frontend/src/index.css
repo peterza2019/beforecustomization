@@ -1,5 +1,5 @@
 .icon-container {
-	border-radius: 50%;
+	border-radius: 8%;
 	padding: 8px;
 	width: 40px;
 	height: 40px;
@@ -7,7 +7,7 @@
 }
 
 .icon-container:hover {
-	background-color: #1e1e1e;
+	background-color: #68f60a;
 }
 
 ::-webkit-scrollbar {
@@ -15,28 +15,29 @@
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #1e1e1e;
+	background-color: #0a24e7;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #888;
+	background-color: #e60b0b;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #555;
+	background-color: #efeb07;
 }
 
 :root {
-	--bg-color: #1a1b26;
-	--text-color: #a9b1d6;
-	--accent-color: #7aa2f7;
-	--card-bg: rgba(255, 255, 255, 0.05);
-	--card-border: rgba(255, 255, 255, 0.5);
+	/*--bg-color: #f60696; */
+	--text-color: #b123c3b5;
+	--accent-color: #f2800d;
+	--card-bg: rgba(124, 2, 255, 0.05);
+	--card-border: rgb(253, 253, 253);
   }
   
-  body {
-	background: linear-gradient(45deg, #1a1b26, #24283b);
+  .body {
+	/*background: linear-gradient(45deg, #a50fe6, #d90367); */
 	color: var(--text-color);
-	font-family: 'Arial', sans-serif;
+	background-image: url('/assets/images/test.png');
+	
   }
   
   .glass-card {
@@ -45,7 +46,7 @@
 	border: 1px solid var(--card-border);
 	border-radius: 10px;
 	padding: 20px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 4px 6px rgba(255, 255, 255, 0.7);
   }
   
   .button {
@@ -63,27 +64,35 @@
   }
 
   .app {
-	min-height: 80vh;
+	min-height: 50vh;
 	background: linear-gradient(to bottom right, #ade0bb, #6c6f8e);
+	font-family: 'Arial', sans-serif;
+	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center   
+   center;
   }
   
   .blur-overlay {
 	position: fixed;
 	top: 0;
-	left: 0;
-	right: 0;
+	left: 10;
+	right: 10;
 	bottom: 0;
+
+	/* Add gradient effect to to backround all pages */
 	background: 
-	  radial-gradient(circle at top left, rgba(23, 204, 228, 0.5), transparent 50%),
-	  radial-gradient(circle at bottom right, rgba(238, 92, 165, 0.5), transparent 50%);
-	filter: blur(100px);
+	  radial-gradient(circle at top left, rgb(246, 115, 0), transparent 90%),
+	  radial-gradient(circle at bottom right, rgb(4, 246, 24), transparent 50%);
+	filter: blur(50px);
 	z-index: 0;
   }
   
-  /* Add glassmorphism effect to components */
+  /* Add glassmorphism effect to components this is for header component */
   .glass-effect {
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(10px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgb(238, 6, 238);
+	backdrop-filter: blur(30px);
+	border-radius: 15px;
+	border: 3px solid rgba(255, 255, 255, 0);
   }

@@ -56,7 +56,7 @@ const Conversation = ({ conversation, isOnline }) => {
 					}}
 					src={user.profilePic}
 				>
-					{isOnline ? <AvatarBadge boxSize='1em' bg='green.500' /> : ""}
+					{isOnline ? <AvatarBadge boxSize='1em' bg='pink.500' /> : ""}
 				</Avatar>
 			</WrapItem>
 
@@ -66,7 +66,7 @@ const Conversation = ({ conversation, isOnline }) => {
 				</Text>
 				<Text fontSize={"xs"} display={"flex"} alignItems={"center"} gap={1}>
 					{currentUser._id === lastMessage.sender ? (
-						<Box color={lastMessage.seen ? "blue.400" : ""}>
+						<Box color={lastMessage.seen ? "pink.400" : ""}>
 							<BsCheck2All size={16} />
 						</Box>
 					) : (
