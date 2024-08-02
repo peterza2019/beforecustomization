@@ -38,7 +38,7 @@ const UserHeader = ({ user }) => {
 					<Flex gap={2} alignItems={"center"}>
 						<Text fontSize={"sm"}>{user.username}</Text>
 						<Text fontSize={"xs"} bg={"gray.dark"} color={"gray.light"} p={1} borderRadius={"full"}>
-							threads.net
+							@petstagram.co.za
 						</Text>
 					</Flex>
 				</Box>
@@ -107,7 +107,7 @@ const UserHeader = ({ user }) => {
 
 			<Flex w={"full"}>
 				<Flex flex={1} borderBottom={"1.5px solid white"} justifyContent={"center"} pb='3' cursor={"pointer"}>
-					<Text fontWeight={"bold"}> Threads</Text>
+					<Text fontWeight={"bold"}> Posted </Text>
 				</Flex>
 				<Flex
 					flex={1}
@@ -117,7 +117,7 @@ const UserHeader = ({ user }) => {
 					pb='3'
 					cursor={"pointer"}
 				>
-					<Text fontWeight={"bold"}> Replies</Text>
+					<Text fontWeight={"bold"}> Replied </Text>
 				</Flex>
 			</Flex>
 		</VStack>
