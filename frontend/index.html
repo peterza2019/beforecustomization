@@ -9,9 +9,14 @@
 	<body>
 		<div id="root"></div>
 		<script type='text/javascript'>
-			const ZeroBounce_JsWidget_APIKEY = 'YOUR_PUBLIC_API_KEY_HERE';
+			const ZeroBounce_JsWidget_APIKEY = process.env.YOUR_PUBLIC_API_KEY;
 			const disableSubmitOnError = true;
 		  </script>
 		<script type="module" src="/src/main.jsx"></script>
+
+        <!-- Buttons container -->
+
+
+
 	</body>
 </html>

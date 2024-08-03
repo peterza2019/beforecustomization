@@ -19,7 +19,7 @@ import { useSetRecoilState } from "recoil";
 import authScreenAtom from "../atoms/authAtom";
 import useShowToast from "../hooks/useShowToast";
 import userAtom from "../atoms/userAtom";
-
+import ConfettiButtons from './ConfettiButtons';
 
 
 export default function LoginCard() {
@@ -118,6 +118,15 @@ export default function LoginCard() {
 							</Button>
 						</Stack>
 						<Stack pt={6}>
+
+						<Flex align={"center"} justify={"center"}>
+      {/* ... other elements */}
+
+      <ConfettiButtons />
+
+      {/* ... other elements */}
+    </Flex>
+								
 							<Text align={"center"}>
 								Not a Member Yet ?{" "}
 								<Link color={"blue.400"} onClick={() => setAuthScreen("signup")}>
